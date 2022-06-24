@@ -1,0 +1,7 @@
+<component name="MainScene" extends="Scene">
+    <script type="text/brightscript" uri="MainScene.brs" />
+
+    <interface>
+        
+    </interface>
+</component>
