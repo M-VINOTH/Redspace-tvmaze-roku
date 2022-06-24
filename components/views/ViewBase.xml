@@ -1,0 +1,9 @@
+<component name="ViewBase" extends="Group">
+   
+     <!-- Source Script files -->
+    <script type="text/brightscript" uri="pkg:/source/helpers/Screens.brs" />
+    <script type="text/brightscript" uri="pkg:/source/utils/DateUtils.brs" />
+    <script type="text/brightscript" uri="pkg:/source/utils/Promise.brs" />
+    <script type="text/brightscript" uri="pkg:/source/utils/ObjectUtils.brs" />
+    
+</component>

@@ -1,7 +1,20 @@
 <component name="MainScene" extends="Scene">
+
+    <script type="text/brightscript" uri="Styles.brs" />
     <script type="text/brightscript" uri="MainScene.brs" />
 
+    <!-- Source Script files -->
+    <script type="text/brightscript" uri="pkg:/source/helpers/Screens.brs" />
+    <script type="text/brightscript" uri="pkg:/source/controllers/AppController.brs" />
+
     <interface>
-        
+        <!-- Public fields -->
+        <field id="internetConnection" type="boolean" alwaysNotify="true"/>
+
+        <function name ="navigateTo"/>
     </interface>
+     <children>
+        <Overhang id="appOverhang"/>
+    </children>
+
 </component>

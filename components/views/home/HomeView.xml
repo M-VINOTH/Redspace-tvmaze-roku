@@ -1,0 +1,5 @@
+<component name="HomeView" extends="ViewBase">
+
+    <script type="text/brightscript" uri="HomeView.brs" />
+    
+</component>
