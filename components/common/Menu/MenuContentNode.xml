@@ -1,0 +1,9 @@
+<component name="MenuContentNode" extends="ContentNode">
+    <interface>
+        <field id="title" type="string" />
+        <field id="isFocused" type="boolean" />
+        <field id="isSelected" type="boolean" />
+        <field id="titleColor" type="string" />
+        <field id="focusedTitleColor" type="string" />
+    </interface>
+</component>

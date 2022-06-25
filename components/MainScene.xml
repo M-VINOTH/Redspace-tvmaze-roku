@@ -1,11 +1,17 @@
 <component name="MainScene" extends="Scene">
 
-    <script type="text/brightscript" uri="Styles.brs" />
+    <script type="text/brightscript" uri="styles.brs" />
     <script type="text/brightscript" uri="MainScene.brs" />
 
     <!-- Source Script files -->
+    <script type="text/brightscript" uri="pkg:/source/controllers/BaseController.brs" />
     <script type="text/brightscript" uri="pkg:/source/helpers/Screens.brs" />
     <script type="text/brightscript" uri="pkg:/source/controllers/AppController.brs" />
+    
+    <!-- Home view -->
+    <script type="text/brightscript" uri="pkg:/source/models/HomeViewModel.brs" />
+    <script type="text/brightscript" uri="pkg:/source/controllers/HomeViewController.brs" />
+
 
     <interface>
         <!-- Public fields -->

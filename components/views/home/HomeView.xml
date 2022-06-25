@@ -1,5 +1,12 @@
 <component name="HomeView" extends="ViewBase">
 
     <script type="text/brightscript" uri="HomeView.brs" />
-    
+    <script type="text/brightscript" uri="pkg:/components/views/home/styles.brs" />
+    <interface>
+        <field id="menuItems" type="node" onChange="onMenuItemsReceived"/>
+    </interface>
+
+    <children>
+        <Menu id="categoryMenu"/>
+    </children>
 </component>

@@ -1,0 +1,13 @@
+<component name="Menu" extends="Group">
+    
+    <interface>
+        <field id="menuItems" type="node" onChange="onReceiveMenuItems"/>
+    </interface>
+    
+    <script type="text/brightscript" uri="Menu.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/Menu/Styles.brs" />
+    
+    <children>
+        <Markupgrid id="menuGrid"/>
+    </children>
+</component>

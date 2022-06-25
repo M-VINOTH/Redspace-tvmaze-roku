@@ -1,0 +1,16 @@
+<component name="MenuItemComponent" extends="Group">
+
+    <interface>
+       <field id="itemContent" type="node" onChange="onRecivedItemContent" /> 
+    </interface>
+
+    <script type="text/brightscript" uri="MenuItemComponent.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/Menu/Styles.brs" />
+
+    <children>
+        <LayoutGroup id="menuLayout">
+            <Label id="menuTitle"/>
+            <Rectangel id="menuFocusIndicatorLine"/>
+        </LayoutGroup>
+    </children>
+</component>

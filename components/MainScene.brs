@@ -3,11 +3,14 @@ sub init()
 
     topRef = m.top
 
-    topRef.observerField("internetConnection", "onInternetConnectionChange")
+    topRef.observeField("internetConnection", "onInternetConnectionChange")
     setStyles()
 
     m.appController = AppController()
     m.appController.init(m.top)
+
+    Sleep(5000)
+    navigateTo(getScreens().HOME_VIEW,{})
 end sub
 
 '************
@@ -30,7 +33,7 @@ end sub
 function navigateTo(screenName as string, payload as dynamic)
     m.appController.navigate(screenName,payload)
 end function
-
+ 
 '=========================================
 '# {Start}:Scene ObserverField Function
 '========================================

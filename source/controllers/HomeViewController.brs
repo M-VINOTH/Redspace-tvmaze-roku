@@ -4,21 +4,34 @@
 ' **Description: This function will return HomeViewController
 '************
 function HomeViewController() as object
-    if m_homeViewControllerSingleton = invalid
+    if m._homeViewControllerSingleton = invalid
         
         prototype = BaseController()
 
         '************
         '- Function Name:  ``init``
-        '- Params: 
-        '- Return:  
-        ' **Description: 
         '************
         prototype.init = sub()
             homeView = createObject("roSGNode","HomeView")
+
+            m.setup(homeView)
             m.setModel(HomeViewModel())
+            
+            'Initialize observer            
+            
+            m._model.init()
+            homeView.menuItems = m._model.getMenuItems()
         end sub
 
-        prototype = m._homeViewControllerSingleton
+        m._homeViewControllerSingleton = prototype
     end if
+    return m._homeViewControllerSingleton
 end function
+
+'=========================================
+'# {Start}:Home View observerfield function handler 
+'========================================
+ 
+'=========================================
+'# {End}:Home View observerfield function handler 
+'========================================
