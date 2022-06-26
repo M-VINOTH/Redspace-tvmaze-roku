@@ -7,6 +7,7 @@
     </interface>
 
     <children>
+        
         <Menu id="categoryMenu"/>
     </children>
 </component>

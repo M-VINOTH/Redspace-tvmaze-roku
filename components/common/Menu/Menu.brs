@@ -1,12 +1,15 @@
 sub init()
     m.menuGrid = m.top.findNode("menuGrid")
-
+    m.menuGridLayout = m.top.findNode("menuGridLayout")
+    
+    m.top.observeField("focusedChild","onUpdateFocusChange")
+    
     setStyle()
 end sub
 
 sub setStyle()
     style = getMenuStyle()
-
+    m.menuGridLayout.setFields(style.menuGridLayout)
     m.menuGrid.setFields(style.menuGrid)
 
 end sub
@@ -22,3 +25,16 @@ sub onReceiveMenuItems(event as object)
     m.menuGrid.numColumns = numbersOfMenu
     m.menuGrid.content = menuContentNode
 end sub
+
+'=========================================
+'# {Start}:Top observer field function handler 
+'========================================
+ sub onUpdateFocusChange(event as object)
+    hasFocus = m.top.hasFocus()
+    if hasFocus
+        m.menuGrid.setFocus(hasFocus)
+    end if
+ end sub
+'=========================================
+'# {End}:Top observer field function handler 
+'========================================

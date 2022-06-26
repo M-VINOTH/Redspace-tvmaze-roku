@@ -7,12 +7,20 @@ function getMenuStyle() as object
     imageRoot = "pkg:/images/app/"
     styles = {
         menuGrid:  {
-            itemSize: [300,60],
-            translation: [ 130, 160 ],
-            itemSpacings: [10,10],
+            itemSize: [160,60],
+            translation: [ 10, 0 ],
             rowHeights:[60],
             numRows:1
-            itemComponentName:"MenuItemComponent"
+            itemComponentName:"MenuItemComponent",
+            visible: true
+        },
+        menuGridLayout: {
+            layoutDirection: "vert",
+            vertAlignment:"top"
+            horizAlignment: "center",
+            itemSpacings:[10],
+            translation:[960,45],
+            visible:true
         }
     }
     return styles
@@ -30,17 +38,17 @@ function getMenuItemComponentStyle() as object
             layoutDirection: "vert",
             vertAlignment:"top"
             horizAlignment: "left",
-            itemSpacings:[30],
-            translation:[0,0],
+            itemSpacings:[5],
+            translation:[20,0],
             visible:true
         },
         menuTitle:  {
             visible:true
         },
         menuFocusIndicatorLine:  {
-            visible:true
-            width: 300,
-            height: 6,
+            visible:false
+            width: 100,
+            height: 10,
             color:"0xff44ff66"
         }
     }

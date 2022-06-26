@@ -12,8 +12,9 @@ function BaseController() as object
         
         '************
         '- Function Name:  ``init``
+        '- Param: parent as object
         '************
-        prototype.init = sub()
+        prototype.init = sub(parent as object)
         end sub
 
         '************

@@ -25,4 +25,5 @@ end sub
 sub onRecivedItemContent(event as object)
     menu = event.getData()
     m.menuTitle.text = menu.title
+    m.menuFocusIndicatorLine.width = m.menuTitle.boundingRect().width
 end sub

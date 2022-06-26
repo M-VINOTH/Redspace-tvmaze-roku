@@ -13,7 +13,7 @@ sub Main()
 
     'Create a scene and load /components/MainScene.xml'
     scene = screen.CreateScene("MainScene")
-    screen.show()
+    screen.show() ' vscode_rale_tracker_entry
 
     m.connection = CreateObject("roDeviceInfo")
 	m.connection.SetMessagePort(m.port)

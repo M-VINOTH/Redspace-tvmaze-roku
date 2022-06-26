@@ -30,7 +30,7 @@ function AppController() as object
             else if screens.VIDEO_VIEW = screenName
 
             end if
-            m._currentState.init()
+            m._currentState.init(m._root)
             m._currentState.launch()
             m._currentState.setFocus()
         end sub

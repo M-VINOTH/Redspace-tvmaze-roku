@@ -10,10 +10,12 @@ function HomeViewController() as object
 
         '************
         '- Function Name:  ``init``
+        '- Param: parent as object
         '************
-        prototype.init = sub()
+        prototype.init = sub(parent as object)
             homeView = createObject("roSGNode","HomeView")
-
+            parent.appendChild(homeView)
+            
             m.setup(homeView)
             m.setModel(HomeViewModel())
             

@@ -9,7 +9,8 @@ function getHomeViewStyle() as object
         categoryMenu:  {
             width: 1900,
             height: 200,
-            color: "0x00000099"
+            color: "0x00000099",
+            visible:true
         },
     }
     return styles

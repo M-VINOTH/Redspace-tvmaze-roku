@@ -1,5 +1,7 @@
 sub init()
     m.categoryMenu = m.top.findNode("categoryMenu")
+
+    m.top.observeField("focusedChild","onUpdateFocusChange")
 end sub
 
 '************
@@ -20,3 +22,16 @@ sub onMenuItemsReceived(event as object)
     menus = event.getData()
     m.categoryMenu.menuItems = menus
 end sub
+
+'=========================================
+'# {Start}:Top observerfield function handler 
+'========================================
+ sub onUpdateFocusChange(event as object)
+    hasFocus = m.top.hasFocus()
+    if hasFocus
+        m.categoryMenu.setFocus(hasFocus)
+    end if
+ end sub
+'=========================================
+'# {End}:Top observerfield function handler 
+'========================================

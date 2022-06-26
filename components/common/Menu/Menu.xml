@@ -8,6 +8,8 @@
     <script type="text/brightscript" uri="pkg:/components/common/Menu/Styles.brs" />
     
     <children>
+    <LayoutGroup id="menuGridLayout">
         <Markupgrid id="menuGrid"/>
+    </LayoutGroup>
     </children>
 </component>

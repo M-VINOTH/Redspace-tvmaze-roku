@@ -10,7 +10,7 @@
     <children>
         <LayoutGroup id="menuLayout">
             <Label id="menuTitle"/>
-            <Rectangel id="menuFocusIndicatorLine"/>
+            <Rectangle id="menuFocusIndicatorLine"/>
         </LayoutGroup>
     </children>
 </component>
