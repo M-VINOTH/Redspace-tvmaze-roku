@@ -9,5 +9,11 @@
     
     <children>
         <Rectangle width="1920" height="1080" color="#000000" />
+        <BusySpinner 
+            id="spinner" 
+            visible="true" 
+            translation="[940,500]" 
+            uri="pkg:/images/loaderSpinner.png"
+            />
     </children>
 </component>

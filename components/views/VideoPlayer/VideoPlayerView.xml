@@ -1,0 +1,14 @@
+<component name="VideoPlayerView" extends="ViewBase">
+    
+    <script type="text/brightscript" uri="VideoPlayerView.brs" />
+    <script type="text/brightscript" uri="pkg:/components/views/VideoPlayer/Styles.brs" />
+
+    <interface>
+        <field id="videoContent" type="node" onChange="onVideoContentRecieved" />
+    </interface>
+
+    <children>
+        <Video id="player" />
+    </children>
+    
+</component>

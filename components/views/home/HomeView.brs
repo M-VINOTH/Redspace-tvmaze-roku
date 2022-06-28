@@ -1,5 +1,5 @@
 sub init()
-    ' m.layoutGroup = m.top.findNode("layoutGroup")
+    m.spinner = m.top.findNode("spinner")
     m.showGrid = m.top.findNode("showGrid")
     m.categoryMenu = m.top.findNode("categoryMenu")
 
@@ -16,7 +16,6 @@ end sub
 '************
 sub setStyle()
     style = getHomeViewStyle()
-    ' m.layoutGroup.setFields(style.layoutGroup)
     m.categoryMenu.setFields(style.categoryMenu)
     m.showGrid.setFields(style.showGrid)
 end sub
@@ -34,6 +33,7 @@ end sub
 sub onShowsItemsReceived(event as object)
     shows = event.getData()
     m.showGrid.content = shows
+    m.spinner.visible = false
 end sub
 
 '=========================================

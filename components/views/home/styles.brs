@@ -6,14 +6,6 @@
 function getHomeViewStyle() as object
     imageRoot = "pkg:/images/app/"
     styles = {
-        layoutGroup:{
-            layoutDirection: "vert",
-            vertAlignment:"top"
-            horizAlignment: "left",
-            itemSpacings:[30],
-            translation:[90,45],
-            visible:true
-        },
         showGrid:{
             itemSize: [340,440],
             translation: [ 60,180],

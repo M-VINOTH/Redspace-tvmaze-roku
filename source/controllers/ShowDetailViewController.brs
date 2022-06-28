@@ -32,8 +32,10 @@ function ShowDetailViewController() as object
             m._topRef.episodes = m._model.getEpisodesForSelectedSeason()
         end sub
 
+
         prototype.onSelectEpisodeIndex = sub(index as integer)
-            
+            scene = m._topRef.getScene()
+            scene.callfunc("navigateTo",getScreens().VIDEO_VIEW,index)
         end sub
 
         '************

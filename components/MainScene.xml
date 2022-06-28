@@ -19,6 +19,11 @@
     <script type="text/brightscript" uri="pkg:/source/models/ShowDetailViewModel.brs" />
     <script type="text/brightscript" uri="pkg:/source/controllers/ShowDetailViewController.brs" />
 
+    <!-- Show Detail -->
+    <script type="text/brightscript" uri="pkg:/source/models/VideoPlayerViewModel.brs" />
+    <script type="text/brightscript" uri="pkg:/source/controllers/VideoPlayerViewController.brs" />
+
+
     <interface>
         <!-- Public fields -->
         <field id="internetConnection" type="boolean" alwaysNotify="true"/>

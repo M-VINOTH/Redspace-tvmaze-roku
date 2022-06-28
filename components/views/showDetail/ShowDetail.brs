@@ -1,4 +1,6 @@
 sub init()
+    m.spinner = m.top.findNode("spinner")
+    
     m.bottomGroup = m.top.findNode("bottomGroup")
     m.seasonNumberGrid = m.top.findNode("seasonNumberGrid")
     m.episodeGrid = m.top.findNode("episodeGrid")
@@ -51,6 +53,7 @@ end sub
 sub onReceivedEpisodes(event as object)
     episodes = event.getData()
     m.episodeGrid.content = episodes
+    m.spinner.visible = false
 end sub
 
 '************

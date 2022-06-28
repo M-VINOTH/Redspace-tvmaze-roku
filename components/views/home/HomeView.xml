@@ -13,10 +13,6 @@
     </interface>
 
     <children>
-    <!-- <LayoutGroup id="layoutGroup">
-        
-        
-    </LayoutGroup> -->
     <Menu id="categoryMenu"/>
     <Markupgrid id="showGrid"/>
     </children>

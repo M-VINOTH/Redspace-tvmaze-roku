@@ -32,7 +32,7 @@ function AppController() as object
             else if screens.SHOW_DETAIL = screenName
                 currentState = ShowDetailViewController()
             else if screens.VIDEO_VIEW = screenName
-
+                currentState = VideoPlayerViewController()
             end if
             m._screenStack.push(currentState)
             currentState.init(m._root,payload)
