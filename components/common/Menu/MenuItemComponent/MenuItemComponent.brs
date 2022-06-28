@@ -24,6 +24,19 @@ end sub
 '************
 sub onRecivedItemContent(event as object)
     menu = event.getData()
+    menu.observeField("isSelected","onSelectUpdate")
+    if menu.isSelected
+        m.menuTitle.font = getFont("bold",36)
+    end if
     m.menuTitle.text = menu.title
     m.menuFocusIndicatorLine.width = m.menuTitle.boundingRect().width
 end sub
+
+sub onSelectUpdate(event as object)
+    isSelected = event.getData()
+    if isSelected
+        m.menuTitle.font = getFont("bold",36)
+    else
+        m.menuTitle.font = getFont("regular",36)
+    end if
+ end sub

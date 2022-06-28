@@ -96,7 +96,13 @@ end sub
 sub onSelectSeason(event as object)
     index = event.getData()
     if m.top.selectedSeasonIndex  <> index
+        seasonContent = m.seasonNumberGrid.content.getChild(m.top.selectedSeasonIndex)
+        seasonContent.isSelected = false
+
         m.top.selectedSeasonIndex = index
+
+        seasonContent = m.seasonNumberGrid.content.getChild(index)
+        seasonContent.isSelected = true
     end if
 end sub
 

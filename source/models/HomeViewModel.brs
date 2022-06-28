@@ -27,9 +27,10 @@ function HomeViewModel() as object
             m._categoryWiseShows = showsbyTypes
             m._menus.append(showsbyTypes.keys())
             menuContentNode = createObject("roSGNode", "ContentNode")
-            for each showtype in m._menus
+            for index = 0 to m._menus.count() - 1
                 menu = menuContentNode.createChild("MenuContentNode")
-                menu.title = showtype
+                menu.isSelected = index = m._selectedMenuIndex
+                menu.title = m._menus[index]
             end for
             
             return menuContentNode

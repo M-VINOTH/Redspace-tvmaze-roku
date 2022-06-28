@@ -9,6 +9,7 @@
     
     <script type="text/brightscript" uri="Menu.brs" />
     <script type="text/brightscript" uri="pkg:/components/common/Menu/Styles.brs" />
+    <script type="text/brightscript" uri="pkg:/source/helpers/Fonts.brs" />
     
     <children>
     <LayoutGroup id="menuGridLayout">

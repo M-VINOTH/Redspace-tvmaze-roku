@@ -38,8 +38,12 @@ end sub
 
  sub onSelectMenu(event as object)
     index = event.getData()
-    if m.top.selectedMenuIndex <> index 
+    if m.top.selectedMenuIndex <> index
+        menuContent = m.menuGrid.content.getChild(m.top.selectedMenuIndex)
+        menuContent.isSelected  = false
         m.top.selectedMenuIndex = index 
+        menuContent = m.menuGrid.content.getChild(index)
+        menuContent.isSelected  = true 
     end if 
  end sub
 '=========================================

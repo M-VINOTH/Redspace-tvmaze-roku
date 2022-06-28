@@ -44,7 +44,8 @@ function getMenuItemComponentStyle() as object
             visible:true
         },
         menuTitle:  {
-            visible:true
+            visible:true,
+            font: getFont("regular",36)
         },
         menuFocusIndicatorLine:  {
             visible:false

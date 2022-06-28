@@ -79,9 +79,10 @@ function ShowDetailViewModel() as object
         prototype.getSeasonNumber = function() as dynamic
             seasons = m._seasonWiseEpisodes.keys()
             seasonsContentNode = createObject("roSGNode", "ContentNode")
-            for each season in seasons
+            for index = 0 to seasons.count()-1
                 seasonNode = seasonsContentNode.createChild("MenuContentNode")
-                seasonNode.title = "S"+ season
+                seasonNode.isSelected = index = m._selectedSeasonIndex
+                seasonNode.title = "S"+ seasons[index]
             end for
 
             return seasonsContentNode
