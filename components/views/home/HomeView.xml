@@ -2,12 +2,22 @@
 
     <script type="text/brightscript" uri="HomeView.brs" />
     <script type="text/brightscript" uri="pkg:/components/views/home/styles.brs" />
+    
     <interface>
         <field id="menuItems" type="node" onChange="onMenuItemsReceived"/>
+        <field id="shows" type="node" onChange="onShowsItemsReceived"/>
+
+        <!-- ObserverFields -->
+        <field id="selectedMenuIndex" type="integer" alwaysNotify="true" />
+        <field id="selectedShowIndex" type="integer" alwaysNotify="true" />
     </interface>
 
     <children>
+    <!-- <LayoutGroup id="layoutGroup">
         
-        <Menu id="categoryMenu"/>
+        
+    </LayoutGroup> -->
+    <Menu id="categoryMenu"/>
+    <Markupgrid id="showGrid"/>
     </children>
 </component>

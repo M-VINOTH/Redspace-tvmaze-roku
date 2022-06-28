@@ -1,0 +1,18 @@
+<component name="EpisodePoster" extends="Group">
+
+    <script type="text/brightscript" uri="EpisodePoster.brs" />
+    <script type="text/brightscript" uri="pkg:/components/common/EpisodePoster/Styles.brs" />
+    
+    <interface>
+        <field id="itemContent" type="node" onChange="onUpdateContent" />
+        <field id="focusPercent" type="float" onChange="onChangeFocus" />
+    </interface>
+    
+    <children>
+        <Poster id="posterImage">
+            <Poster id="playIcon"/>
+        </Poster>
+        
+    </children>
+
+</component>

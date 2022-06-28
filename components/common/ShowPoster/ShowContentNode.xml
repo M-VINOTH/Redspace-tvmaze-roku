@@ -1,0 +1,7 @@
+<component name="ShowContentNode" extends="ContentNode">
+    <interface>
+        <field id="title" type="string" />
+        <field id="description" type="string" />
+        <field id="posterURL" type="string" />
+    </interface>
+</component>

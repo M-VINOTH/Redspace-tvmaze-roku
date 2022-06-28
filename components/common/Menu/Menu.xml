@@ -2,6 +2,9 @@
     
     <interface>
         <field id="menuItems" type="node" onChange="onReceiveMenuItems"/>
+
+        <!-- ObserverFields -->
+        <field id="selectedMenuIndex" type="integer" />
     </interface>
     
     <script type="text/brightscript" uri="Menu.brs" />

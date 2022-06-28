@@ -14,7 +14,7 @@ function BaseController() as object
         '- Function Name:  ``init``
         '- Param: parent as object
         '************
-        prototype.init = sub(parent as object)
+        prototype.init = sub(parent as object,payload as object)
         end sub
 
         '************
@@ -47,6 +47,16 @@ function BaseController() as object
             m._topRef.setFocus(true)
         end sub
        
+        '************
+        '- Function Name:  ``destory``
+        '************
+        prototype.destroy = sub()
+            scene = m._topRef.getScene()
+            m._topRef.visible = false
+            scene.removeChild(m._topRef)
+            m._topRef = invalid
+        end sub
+
         m._baseControllerSingleton = prototype
     end if
     return m._baseControllerSingleton

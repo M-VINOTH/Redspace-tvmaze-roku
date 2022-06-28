@@ -1,0 +1,26 @@
+<component name="ShowDetail" extends="ViewBase">
+
+    <script type="text/brightscript" uri="ShowDetail.brs" />
+    <script type="text/brightscript" uri="pkg:/components/views/showDetail/Styles.brs" />
+    
+    <interface>
+        <field id="show" type="node" onChange="onReceivedShow" />
+        <field id="seasonNumberMenu" type="node" onChange="onReceivedSeasonNumber" />
+        <field id="episodes" type="node" onChange="onReceivedEpisodes" />
+    </interface>
+
+    <children>
+        <LayoutGroup id="topGroup">
+            <Poster id="showPoster"/>
+             <LayoutGroup id="showInfoGroup">
+                <ScrollingLabel id="showTitle"/>
+                <Label id="showDescription"/>
+            </LayoutGroup>
+        </LayoutGroup>
+
+        <LayoutGroup id="bottomGroup">
+            <Markupgrid id="seasonNumberGrid"/>
+            <Markupgrid id="episodeGrid"/>
+        </LayoutGroup>
+    </children>
+</component>

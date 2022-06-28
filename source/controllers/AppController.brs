@@ -9,6 +9,7 @@ function AppController() as object
         'private properties
         prototype._root = invalid
 
+        prototype._screenStack = []
         prototype._currentState = invalid
         '************
         '- Function Name:  ``init``
@@ -25,14 +26,26 @@ function AppController() as object
         '************
         prototype.navigate = sub(screenName as string, payload as dynamic)
             screens  = getScreens()
+            currentState = invalid
             if screens.HOME_VIEW = screenName
-                m._currentState = HomeViewController()
+                currentState = HomeViewController()
+            else if screens.SHOW_DETAIL = screenName
+                currentState = ShowDetailViewController()
             else if screens.VIDEO_VIEW = screenName
 
             end if
-            m._currentState.init(m._root)
-            m._currentState.launch()
-            m._currentState.setFocus()
+            m._screenStack.push(currentState)
+            currentState.init(m._root,payload)
+            currentState.launch()
+            currentState.setFocus()
+        end sub
+
+        prototype.navigateBack = sub()
+            if m._screenStack.count() > 1
+                currentState = m._screenStack.pop()
+                currentState.launch()
+                currentState.setFocus()
+            end if
         end sub
         m._appControllerSingleton = prototype
     end if

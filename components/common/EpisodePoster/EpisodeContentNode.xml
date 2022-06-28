@@ -1,0 +1,8 @@
+<component name="EpisodeContentNode" extends="ContentNode">
+    <interface>
+        <field id="title" type="string" />
+        <field id="posterURL" type="string" />
+        <field id="episodeNumber" type="string" />
+        <field id="seasonNumber" type="string" />
+    </interface>
+</component>

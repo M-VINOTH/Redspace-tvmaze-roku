@@ -3,7 +3,7 @@ sub init()
     m.menuGridLayout = m.top.findNode("menuGridLayout")
     
     m.top.observeField("focusedChild","onUpdateFocusChange")
-    
+    m.menuGrid.observeField("itemSelected","onSelectMenu")
     setStyle()
 end sub
 
@@ -34,6 +34,13 @@ end sub
     if hasFocus
         m.menuGrid.setFocus(hasFocus)
     end if
+ end sub
+
+ sub onSelectMenu(event as object)
+    index = event.getData()
+    if m.top.selectedMenuIndex <> index 
+        m.top.selectedMenuIndex = index 
+    end if 
  end sub
 '=========================================
 '# {End}:Top observer field function handler 

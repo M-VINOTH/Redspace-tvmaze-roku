@@ -6,6 +6,7 @@
 function getScreens() as object
     this  = {
         HOME_VIEW: "HomeView",
+        SHOW_DETAIL:"ShowDetail"
         VIDEO_VIEW: "VideoPlayer"
     }
     return this

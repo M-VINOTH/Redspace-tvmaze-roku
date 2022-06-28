@@ -52,3 +52,12 @@ end sub
 '=========================================
 '# {End}:Scene ObserverField Function
 '========================================
+
+function onKeyEvent(key as string, press as boolean) as dynamic
+    handled = false
+    if press
+        if key = "back"
+            m.appController.navigateBack()
+        end if
+    end if
+end function

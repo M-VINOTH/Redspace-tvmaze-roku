@@ -1,0 +1,14 @@
+<component name="ContentServiceTask" extends="Task">
+
+    <script type="text/brightscript" uri="ContentServiceTask.brs" />
+    <script type="text/brightscript" uri="pkg:/source/helpers/API.brs" />
+    <interface>
+    <!-- Input -->
+        <field id="data" type="assocArray" />
+        <field id="runFunction" type="string" onChange="onRunFunctionUpdated" />
+    
+    <!-- Output -->
+    <field id="response" type="assocArray"/>
+
+    </interface>
+</component>

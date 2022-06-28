@@ -1,16 +1,24 @@
 sub init()
+    ' m.layoutGroup = m.top.findNode("layoutGroup")
+    m.showGrid = m.top.findNode("showGrid")
     m.categoryMenu = m.top.findNode("categoryMenu")
 
-    m.top.observeField("focusedChild","onUpdateFocusChange")
+    m.top.observeField("focusedChild", "onUpdateFocusChange")
+    m.categoryMenu.observeField("selectedMenuIndex", "onSelectMenu")
+    m.showGrid.observeField("itemSelected", "onSelectShow")
+
+    setStyle()
 end sub
 
 '************
-'- Function Name:  ``setStyle`` 
-' **Description: 
+'- Function Name:  ``setStyle``
+' **Description:
 '************
 sub setStyle()
     style = getHomeViewStyle()
+    ' m.layoutGroup.setFields(style.layoutGroup)
     m.categoryMenu.setFields(style.categoryMenu)
+    m.showGrid.setFields(style.showGrid)
 end sub
 
 '************
@@ -23,15 +31,39 @@ sub onMenuItemsReceived(event as object)
     m.categoryMenu.menuItems = menus
 end sub
 
+sub onShowsItemsReceived(event as object)
+    shows = event.getData()
+    m.showGrid.content = shows
+end sub
+
 '=========================================
-'# {Start}:Top observerfield function handler 
+'# {Start}:Top observerfield function handler
 '========================================
- sub onUpdateFocusChange(event as object)
+sub onUpdateFocusChange(event as object)
     hasFocus = m.top.hasFocus()
     if hasFocus
         m.categoryMenu.setFocus(hasFocus)
     end if
- end sub
+end sub
+
+sub onSelectMenu(event as object)
+    index = event.getData()
+    m.top.selectedMenuIndex = index
+end sub
+
+sub onSelectShow(event as object)
+    index = event.getData()
+    m.top.selectedShowIndex = index
+end sub
 '=========================================
-'# {End}:Top observerfield function handler 
+'# {End}:Top observerfield function handler
 '========================================
+
+
+function onKeyEvent(key as string, press as boolean) as boolean
+    if key = "up"
+        m.categoryMenu.setFocus(true)
+    else if key = "down"
+        m.showGrid.setFocus(true)
+    end if
+end function
