@@ -7,6 +7,10 @@
         <field id="show" type="node" onChange="onReceivedShow" />
         <field id="seasonNumberMenu" type="node" onChange="onReceivedSeasonNumber" />
         <field id="episodes" type="node" onChange="onReceivedEpisodes" />
+
+        <!-- ObserverField  -->
+        <field id="selectedSeasonIndex" type="integer" alwaysNotify="true" />
+        <field id="selectedEpisodeIndex" type="integer" alwaysNotify="true" />
     </interface>
 
     <children>

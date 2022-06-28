@@ -10,6 +10,10 @@ sub init()
    
 
     m.top.observeField("focusedChild", "onUpdateFocusChange")
+
+    m.episodeGrid.observeField("itemSelected", "onSelectEpisode")
+    m.seasonNumberGrid.observeField("itemSelected", "onSelectSeason")
+
     setStyle()
 end sub
 
@@ -70,6 +74,21 @@ sub onUpdateFocusChange(event as object)
     end if
 end sub
 
+sub onSelectSeason(event as object)
+    index = event.getData()
+    if m.top.selectedSeasonIndex  <> index
+        m.top.selectedSeasonIndex = index
+    end if
+end sub
+
+sub onSelectEpisode(event as object)
+    index = event.getData()
+    m.top.selectedEpisodeIndex = index
+end sub
+
+'************
+'- Function Name:  ``onkeyEvent``
+'************
 function onKeyEvent(key as string, press as boolean) as boolean
     if key = "up"
         m.seasonNumberGrid.setFocus(true)

@@ -55,6 +55,11 @@ function ShowDetailViewModel() as object
             return m._seasonWiseEpisodes
         end function
 
+        prototype.setSelectedSeasonIndex = function(index as integer)as boolean
+            m._selectedSeasonIndex = index
+            return true
+        end function
+
         prototype.getEpisodesForSelectedSeason = function() as dynamic
             seasons = m._seasonWiseEpisodes.keys()
             episodes = m._seasonWiseEpisodes[seasons[m._selectedSeasonIndex]]

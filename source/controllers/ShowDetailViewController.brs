@@ -14,7 +14,10 @@ function ShowDetailViewController() as object
         '************
         prototype.init = sub(parent as object,payload as object)
             showDetail = createObject("roSGNode","ShowDetail")
-            
+
+            showDetail.observeField("selectedSeasonIndex","onSelectSeasonIndex")
+            showDetail.observeField("selectedEpisodeIndex","onSelectEpisodeIndex")
+
             parent.appendChild(showDetail)
             
             m.setup(showDetail)
@@ -24,15 +27,13 @@ function ShowDetailViewController() as object
             m._model.init(payload)
         end sub
 
-        prototype.selectedMenuIndex = sub(index as integer)
-            m._model.setSelectedMenu(index)
-            m._topRef.shows = m._model.getShowsForSelectedMenu()
+        prototype.onSelectSeasonIndex = sub(index as integer)
+            m._model.setSelectedSeasonIndex(index)
+            m._topRef.episodes = m._model.getEpisodesForSelectedSeason()
         end sub
 
-        prototype.onSelectShow = sub(index as integer)
-            show = m._topRef.shows.getChild(index)
-            scene = m._topRef.getScene()
-            scene.callfunc("navigateTo",getScreens().SHOW_DETAIL,show)
+        prototype.onSelectEpisodeIndex = sub(index as integer)
+            
         end sub
 
         '************
@@ -49,3 +50,23 @@ function ShowDetailViewController() as object
     end if
     return m._showDetailViewControllerSingleton
 end function
+
+'=========================================
+'# {Start}:Show Detail View observerfield function handler 
+'========================================
+sub onSelectSeasonIndex(event as object)
+    index = event.getData()
+    if m._showDetailViewControllerSingleton <> invalid
+        m._showDetailViewControllerSingleton.onSelectSeasonIndex(index)
+    end if
+ end sub
+
+ sub onSelectEpisodeIndex(event as object)
+    index = event.getData()
+    if m._showDetailViewControllerSingleton <> invalid
+        m._showDetailViewControllerSingleton.onSelectEpisodeIndex(index)
+    end if
+ end sub
+'=========================================
+'# {End}:Home View observerfield function handler 
+'========================================
