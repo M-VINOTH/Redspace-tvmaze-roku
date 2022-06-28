@@ -3,7 +3,14 @@
     <script type="text/brightscript" uri="ShowDetail.brs" />
     <script type="text/brightscript" uri="pkg:/components/views/showDetail/Styles.brs" />
     
+    <!-- Show Detail -->
+    <script type="text/brightscript" uri="pkg:/source/models/ShowDetailViewModel.brs" />
+    <script type="text/brightscript" uri="pkg:/source/controllers/ShowDetailViewController.brs" />
+
+
     <interface>
+        <field id="payload" type="assocArray" onChange="onReceivedInitData" />
+
         <field id="show" type="node" onChange="onReceivedShow" />
         <field id="seasonNumberMenu" type="node" onChange="onReceivedSeasonNumber" />
         <field id="episodes" type="node" onChange="onReceivedEpisodes" />

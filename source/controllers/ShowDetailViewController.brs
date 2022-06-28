@@ -12,8 +12,8 @@ function ShowDetailViewController() as object
         '- Function Name:  ``init``
         '- Param: parent as object
         '************
-        prototype.init = sub(parent as object,payload as object)
-            showDetail = createObject("roSGNode","ShowDetail")
+        prototype.init = sub(node as object,parent as object,payload as object)
+            showDetail = node
 
             showDetail.observeField("selectedSeasonIndex","onSelectSeasonIndex")
             showDetail.observeField("selectedEpisodeIndex","onSelectEpisodeIndex")
@@ -24,7 +24,7 @@ function ShowDetailViewController() as object
             m.setModel(ShowDetailViewModel())
 
             'Initialize observer            
-            m._model.init(payload)
+            m._model.init(payload.data)
         end sub
 
         prototype.onSelectSeasonIndex = sub(index as integer)

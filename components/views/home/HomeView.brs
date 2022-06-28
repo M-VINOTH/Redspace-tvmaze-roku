@@ -4,10 +4,12 @@ sub init()
     m.categoryMenu = m.top.findNode("categoryMenu")
 
     m.top.observeField("focusedChild", "onUpdateFocusChange")
-    m.categoryMenu.observeField("selectedMenuIndex", "onSelectMenu")
-    m.showGrid.observeField("itemSelected", "onSelectShow")
+    m.categoryMenu.observeField("selectedMenuIndex", "onSelectMenuIndex")
+    m.showGrid.observeField("itemSelected", "onSelectShowIndex")
 
     setStyle()
+
+    m.homeController = HomeViewController()
 end sub
 
 '************
@@ -18,6 +20,18 @@ sub setStyle()
     style = getHomeViewStyle()
     m.categoryMenu.setFields(style.categoryMenu)
     m.showGrid.setFields(style.showGrid)
+end sub
+
+'************
+'- Function Name:  ``onReceivedInitData``
+'- Params: event as object 
+'- Return:  This function will trigger when payload has recieved
+' **Description: 
+sub onReceivedInitData(event as object)
+    payload = event.getData()
+    m.homeController.init(m.top, m.top.getScene(),m.top.payload)
+    m.homeController.launch()
+    m.homeController.setFocus()
 end sub
 
 '************
@@ -46,12 +60,12 @@ sub onUpdateFocusChange(event as object)
     end if
 end sub
 
-sub onSelectMenu(event as object)
+sub onSelectMenuIndex(event as object)
     index = event.getData()
     m.top.selectedMenuIndex = index
 end sub
 
-sub onSelectShow(event as object)
+sub onSelectShowIndex(event as object)
     index = event.getData()
     m.top.selectedShowIndex = index
 end sub

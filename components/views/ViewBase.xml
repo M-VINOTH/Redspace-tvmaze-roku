@@ -6,7 +6,7 @@
     <script type="text/brightscript" uri="pkg:/source/utils/Promise.brs" />
     <script type="text/brightscript" uri="pkg:/source/utils/ObjectUtils.brs" />
     <script type="text/brightscript" uri="pkg:/source/helpers/Fonts.brs" />
-    
+    <script type="text/brightscript" uri="pkg:/source/controllers/BaseController.brs" />
     <children>
         <Rectangle width="1920" height="1080" color="#000000" />
         <BusySpinner 

@@ -13,8 +13,8 @@ function HomeViewController() as object
         '- Function Name:  ``init``
         '- Param: parent as object
         '************
-        prototype.init = sub(parent as object,payload as object)
-            homeView = createObject("roSGNode","HomeView")
+        prototype.init = sub(node as object, parent as object,payload as object)
+            homeView = node
             
             homeView.observeField("selectedMenuIndex","onSelectMenu")
             homeView.observeField("selectedShowIndex","onSelectShow")

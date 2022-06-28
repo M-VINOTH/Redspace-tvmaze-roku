@@ -3,7 +3,14 @@
     <script type="text/brightscript" uri="HomeView.brs" />
     <script type="text/brightscript" uri="pkg:/components/views/home/styles.brs" />
     
+    <!-- Home view -->
+    <script type="text/brightscript" uri="pkg:/source/models/HomeViewModel.brs" />
+    <script type="text/brightscript" uri="pkg:/source/controllers/HomeViewController.brs" /> 
+    
+
     <interface>
+        <field id="payload" type="assocArray" onChange="onReceivedInitData" />
+
         <field id="menuItems" type="node" onChange="onMenuItemsReceived"/>
         <field id="shows" type="node" onChange="onShowsItemsReceived"/>
 

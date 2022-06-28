@@ -27,24 +27,33 @@ function AppController() as object
         prototype.navigate = sub(screenName as string, payload as dynamic)
             screens  = getScreens()
             currentState = invalid
-            if screens.HOME_VIEW = screenName
-                currentState = HomeViewController()
-            else if screens.SHOW_DETAIL = screenName
-                currentState = ShowDetailViewController()
-            else if screens.VIDEO_VIEW = screenName
-                currentState = VideoPlayerViewController()
+
+            if  m._screenStack.peek() <> invalid
+                lastState = m._screenStack.peek()
+                lastState.visible = false
             end if
+
+            if screens.HOME_VIEW = screenName
+                currentState = CreateObject("roSGNode","HomeView") 
+            else if screens.SHOW_DETAIL = screenName
+                currentState = CreateObject("roSGNode","ShowDetail") 
+            else if screens.VIDEO_VIEW = screenName
+                currentState = CreateObject("roSGNode","VideoPlayerView") 
+            end if
+            currentState.payload = {data: payload}
             m._screenStack.push(currentState)
-            currentState.init(m._root,payload)
-            currentState.launch()
-            currentState.setFocus()
+
         end sub
 
         prototype.navigateBack = sub()
             if m._screenStack.count() > 1
-                currentState = m._screenStack.pop()
-                currentState.launch()
-                currentState.setFocus()
+                lastState = m._screenStack.pop()
+                lastState.visible = false
+                m._root.removeChild(lastState)
+
+                currentState = m._screenStack.peek()
+                currentState.visible = true
+                currentState.setFocus(true)
             end if
         end sub
         m._appControllerSingleton = prototype

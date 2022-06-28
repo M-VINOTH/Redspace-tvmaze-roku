@@ -3,7 +3,11 @@
     <script type="text/brightscript" uri="VideoPlayerView.brs" />
     <script type="text/brightscript" uri="pkg:/components/views/VideoPlayer/Styles.brs" />
 
+    <script type="text/brightscript" uri="pkg:/source/controllers/VideoPlayerViewController.brs" />
+    <script type="text/brightscript" uri="pkg:/source/models/VideoPlayerViewModel.brs" />
     <interface>
+        <field id="payload" type="assocArray" onChange="onReceivedInitData" />
+
         <field id="videoContent" type="node" onChange="onVideoContentRecieved" />
     </interface>
 

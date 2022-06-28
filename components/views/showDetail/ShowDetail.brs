@@ -17,6 +17,8 @@ sub init()
     m.seasonNumberGrid.observeField("itemSelected", "onSelectSeason")
 
     setStyle()
+
+    m.showViewController = ShowDetailViewController()
 end sub
 
 '************
@@ -33,6 +35,20 @@ sub setStyle()
     m.showDescription.setFields(styles.showDescription)
     m.showTitle.setFields(styles.showTitle)
 end sub
+
+'************
+'- Function Name:  ``onReceivedInitData``
+'- Params: event as object 
+'- Return:  This function will trigger when payload has recieved
+' **Description: 
+sub onReceivedInitData(event as object)
+    payload = event.getData()
+    m.showViewController.init(m.top, m.top.getScene(),m.top.payload)
+    m.showViewController.launch()
+    m.showViewController.setFocus()
+end sub
+
+'************
 '************
 '- Function Name:  ``onReceivedShow``
 '- Params:  event as object

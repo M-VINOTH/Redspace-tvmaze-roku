@@ -13,8 +13,8 @@ function VideoPlayerViewController() as object
         '- Function Name:  ``init``
         '- Param: parent as object
         '************
-        prototype.init = sub(parent as object,payload as object)
-            videoPlayerView = createObject("roSGNode","VideoPlayerView")
+        prototype.init = sub(node as object, parent as object,payload as object)
+            videoPlayerView = node
             parent.appendChild(videoPlayerView)
             m.setup(videoPlayerView)
 
