@@ -30,6 +30,7 @@ sub onRecivedItemContent(event as object)
     end if
     m.menuTitle.text = menu.title
     m.menuFocusIndicatorLine.width = m.menuTitle.boundingRect().width
+    updateColumnWidth(menu)
 end sub
 
 sub onSelectUpdate(event as object)
@@ -39,4 +40,10 @@ sub onSelectUpdate(event as object)
     else
         m.menuTitle.font = getFont("regular",36)
     end if
+ end sub
+
+ sub updateColumnWidth(menu as object)
+    parentContentNode = menu.getParent()
+    gridNode = parentContentNode.getParent()
+    gridNode.columnWidths.push(m.menuTitle.boundingRect().width)
  end sub

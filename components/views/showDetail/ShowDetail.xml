@@ -21,17 +21,19 @@
     </interface>
 
     <children>
-        <LayoutGroup id="topGroup">
-            <Poster id="showPoster"/>
-             <LayoutGroup id="showInfoGroup">
-                <ScrollingLabel id="showTitle"/>
-                <Label id="showDescription"/>
-            </LayoutGroup>
+        <Poster id="showPoster"/>
+        <LayoutGroup id="showInfoGroup">
+            <ScrollingLabel id="showTitle"/>
+            <Label id="sessionInfoLabel"/>
+            <Label id="showDescription"/>
+            
         </LayoutGroup>
+        
 
         <LayoutGroup id="bottomGroup">
             <Markupgrid id="seasonNumberGrid"/>
             <Markupgrid id="episodeGrid"/>
+            
         </LayoutGroup>
     </children>
 </component>

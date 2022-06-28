@@ -7,10 +7,11 @@ function getMenuStyle() as object
     imageRoot = "pkg:/images/app/"
     styles = {
         menuGrid:  {
-            itemSize: [300,60],
+            itemSize: [250,60],
             translation: [ 10, 0 ],
             itemSpacings:[20,20],
             rowHeights:[60],
+            columnWidths:[]
             numRows:1
             itemComponentName:"MenuItemComponent",
             visible: true

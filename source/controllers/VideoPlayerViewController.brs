@@ -19,7 +19,7 @@ function VideoPlayerViewController() as object
             m.setup(videoPlayerView)
 
             m.setModel(VideoPlayerViewModel())   
-            m._model.init()
+            m._model.init(payload.data)
             m.onContnetUpdate()
         end sub
 

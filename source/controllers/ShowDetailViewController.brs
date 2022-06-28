@@ -35,7 +35,8 @@ function ShowDetailViewController() as object
 
         prototype.onSelectEpisodeIndex = sub(index as integer)
             scene = m._topRef.getScene()
-            scene.callfunc("navigateTo",getScreens().VIDEO_VIEW,index)
+            isDRM = index MOD 2 ' Event epsisode will play the DRM content
+            scene.callfunc("navigateTo",getScreens().VIDEO_VIEW,isDRM)
         end sub
 
         '************

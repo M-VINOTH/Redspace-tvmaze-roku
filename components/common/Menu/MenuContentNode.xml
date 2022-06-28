@@ -5,5 +5,7 @@
         <field id="isSelected" type="boolean" />
         <field id="titleColor" type="string" />
         <field id="focusedTitleColor" type="string" />
+        <field id="textWidth" type="integer" />
+       
     </interface>
 </component>

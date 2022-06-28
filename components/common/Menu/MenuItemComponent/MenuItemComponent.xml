@@ -1,7 +1,7 @@
 <component name="MenuItemComponent" extends="Group">
 
     <interface>
-       <field id="itemContent" type="node" onChange="onRecivedItemContent" /> 
+        <field id="itemContent" type="node" onChange="onRecivedItemContent" /> 
     </interface>
 
     <script type="text/brightscript" uri="MenuItemComponent.brs" />

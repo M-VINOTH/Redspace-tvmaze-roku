@@ -7,23 +7,16 @@ function getShowDetailStyle() as object
     imageRoot = "pkg:/images/app/"
     
     styles = {
-        topGroup:{
-            layoutDirection: "horiz",
-            vertAlignment:"top"
-            horizAlignment: "left",
-            itemSpacings:[10],
-            translation:[90,90],
-            visible:true
-        },
         showInfoGroup:{
+            translation:[490,90],
             layoutDirection: "vert",
             vertAlignment:"top"
             horizAlignment: "left",
-            itemSpacings:[45],
+            itemSpacings:[20],
             visible:true
-        }
-
+        },
         showPoster:{
+            translation:[90,90]
             width:360,
             height:480,
             visible: true,
@@ -36,8 +29,13 @@ function getShowDetailStyle() as object
             visible: true,
             font: getFont("bold",50)
         },
+        sessionInfoLabel:{
+            height:60,
+            visible: true,
+            font: getFont("light",40)
+        },
         showDescription:{
-            width:750,
+            width:900,
             height:200,
             wrap:true,
             visible: true,

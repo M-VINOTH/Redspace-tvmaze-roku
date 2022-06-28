@@ -5,7 +5,9 @@ sub init()
     m.seasonNumberGrid = m.top.findNode("seasonNumberGrid")
     m.episodeGrid = m.top.findNode("episodeGrid")
     
-    m.topGroup = m.top.findNode("topGroup")
+    m.showInfoGroup = m.top.findNode("showInfoGroup")
+    m.sessionInfoLabel = m.top.findNode("sessionInfoLabel")
+
     m.showPoster = m.top.findNode("showPoster")
     m.showDescription = m.top.findNode("showDescription")
     m.showTitle = m.top.findNode("showTitle")
@@ -14,7 +16,9 @@ sub init()
     m.top.observeField("focusedChild", "onUpdateFocusChange")
 
     m.episodeGrid.observeField("itemSelected", "onSelectEpisode")
+    m.episodeGrid.observeField("itemFocused", "onEpisodeFocused")
     m.seasonNumberGrid.observeField("itemSelected", "onSelectSeason")
+
 
     setStyle()
 
@@ -30,10 +34,11 @@ sub setStyle()
     m.seasonNumberGrid.setFields(styles.seasonNumberGrid)
     m.episodeGrid.setFields(styles.episodeGrid)
     m.bottomGroup.setFields(styles.bottomGroup)
-    m.topGroup.setFields(styles.topGroup)
     m.showPoster.setFields(styles.showPoster)
     m.showDescription.setFields(styles.showDescription)
     m.showTitle.setFields(styles.showTitle)
+    m.showInfoGroup.setFields(styles.showInfoGroup)
+    m.sessionInfoLabel.setFields(styles.sessionInfoLabel)
 end sub
 
 '************
@@ -91,6 +96,13 @@ sub onUpdateFocusChange(event as object)
     if hasFocus
         m.episodeGrid.setFocus(hasFocus)
     end if
+end sub
+
+sub onEpisodeFocused(event as object)
+    itemFocused = event.getData()
+    if m.episodeGrid.content = invalid return
+    episode = m.episodeGrid.content.getChild(itemFocused)
+    m.sessionInfoLabel.text = "S"+episode.seasonNumber +"-" +"E"+episode.episodeNumber
 end sub
 
 sub onSelectSeason(event as object)
